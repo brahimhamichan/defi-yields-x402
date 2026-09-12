@@ -1,0 +1,1 @@
+# no dependencies — python3 stdlib only (http.server, urllib, json, base64)
