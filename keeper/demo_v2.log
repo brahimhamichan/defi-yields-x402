@@ -1,0 +1,141 @@
+aave_read selftest ok: decoder math verified (0.45%% supply, 6.0%% borrow, 0.075 util)
+{
+  "run_at": "2026-09-11T02:23:02Z",
+  "mode": "demo",
+  "keeper_version": "v2-two-leg",
+  "policy": {
+    "min_apy_pct": 5.0,
+    "api_max_age_s": 172800,
+    "aave_max_skew_s": 3600
+  },
+  "decision": {
+    "fire": false,
+    "reason": "below-threshold-via-aave-v3-base-usdc",
+    "threshold": 5.0,
+    "legs": {
+      "x402_api": {
+        "source": "fixture",
+        "fetched_at": "2026-09-08T00:00:00Z",
+        "age_s": 274983,
+        "fresh": false,
+        "top": {
+          "symbol": "USDC",
+          "apy": 6.2,
+          "project": "aave-v3",
+          "chain": "Base"
+        },
+        "v1_verdict": "snapshot-stale"
+      },
+      "aave_v3": {
+        "fresh": true,
+        "block_skew_s": 2,
+        "read": {
+          "liquidity_rate_ray": "37366289448698982406359937",
+          "variable_borrow_rate_ray": "46563588533912008046012720",
+          "supply_apy_pct": 3.7366,
+          "variable_borrow_apy_pct": 4.6564,
+          "utilization_est": 0.8025,
+          "last_update_ts": 1789093375,
+          "a_token": "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
+          "protocol": "aave-v3",
+          "chain": "Base",
+          "chain_id": 8453,
+          "asset": "USDC",
+          "asset_address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pool": "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
+          "block_number": 51152017,
+          "block_timestamp": 1789093381,
+          "rpc_url": "https://base.publicnode.com",
+          "read_at": "2026-09-11T02:23:03Z"
+        }
+      }
+    },
+    "fused_apy": 3.7366,
+    "winning_leg": "aave-v3-base-usdc"
+  },
+  "execution_plan": {
+    "steps": [
+      {
+        "seq": 1,
+        "action": "notify",
+        "params": {
+          "channel": "keeperhub-audit",
+          "message": "keeper-x402 v2 idle: below-threshold-via-aave-v3-base-usdc (api={'symbol': 'USDC', 'apy': 6.2, 'project': 'aave-v3', 'chain': 'Base'}, aave-usdc=3.7366%)"
+        }
+      }
+    ],
+    "plan_hash": "f6595be7e0d64cda"
+  },
+  "keeperhub_binding": "keeperhub_workflow.json (import or MCP create_workflow); v2 adds an Aave-read Code node before the Condition"
+}
+wrote /home/brahim/code/money-goal/keeper/demo_output_v2.json and appended /home/brahim/code/money-goal/keeper/audit_trail.jsonl
+{
+  "run_at": "2026-09-11T02:23:03Z",
+  "mode": "live",
+  "keeper_version": "v2-two-leg",
+  "policy": {
+    "min_apy_pct": 5.0,
+    "api_max_age_s": 172800,
+    "aave_max_skew_s": 3600
+  },
+  "decision": {
+    "fire": false,
+    "reason": "below-threshold-via-aave-v3-base-usdc",
+    "threshold": 5.0,
+    "legs": {
+      "x402_api": {
+        "source": "live-cache-mirror",
+        "fetched_at": "2026-09-08T03:31:59Z",
+        "age_s": 262264,
+        "fresh": false,
+        "top": {
+          "symbol": "SUSDAI",
+          "apy": 7.03,
+          "project": "usd-ai",
+          "chain": "Arbitrum"
+        },
+        "v1_verdict": "snapshot-stale"
+      },
+      "aave_v3": {
+        "fresh": true,
+        "block_skew_s": 0,
+        "read": {
+          "liquidity_rate_ray": "37366289448698982406359937",
+          "variable_borrow_rate_ray": "46563588533912008046012720",
+          "supply_apy_pct": 3.7366,
+          "variable_borrow_apy_pct": 4.6564,
+          "utilization_est": 0.8025,
+          "last_update_ts": 1789093375,
+          "a_token": "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
+          "protocol": "aave-v3",
+          "chain": "Base",
+          "chain_id": 8453,
+          "asset": "USDC",
+          "asset_address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pool": "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
+          "block_number": 51152018,
+          "block_timestamp": 1789093383,
+          "rpc_url": "https://base.publicnode.com",
+          "read_at": "2026-09-11T02:23:03Z"
+        }
+      }
+    },
+    "fused_apy": 3.7366,
+    "winning_leg": "aave-v3-base-usdc"
+  },
+  "execution_plan": {
+    "steps": [
+      {
+        "seq": 1,
+        "action": "notify",
+        "params": {
+          "channel": "keeperhub-audit",
+          "message": "keeper-x402 v2 idle: below-threshold-via-aave-v3-base-usdc (api={'symbol': 'SUSDAI', 'apy': 7.03, 'project': 'usd-ai', 'chain': 'Arbitrum'}, aave-usdc=3.7366%)"
+        }
+      }
+    ],
+    "plan_hash": "7611ad57d0ee5a1c"
+  },
+  "keeperhub_binding": "keeperhub_workflow.json (import or MCP create_workflow); v2 adds an Aave-read Code node before the Condition"
+}
+wrote /home/brahim/code/money-goal/keeper/demo_output_v2.json and appended /home/brahim/code/money-goal/keeper/audit_trail.jsonl

@@ -1,0 +1,124 @@
+{
+  "run_at": "2026-09-08T14:51:27Z",
+  "mode": "demo",
+  "api_base": "https://devbox.tail08c9f0.ts.net",
+  "snapshot_source": "fixture",
+  "snapshot_fetched_at": "2026-09-08T00:00:00Z",
+  "pool_count": 3,
+  "paywall_live": null,
+  "paywall_detail": "skipped (demo mode)",
+  "policy": {
+    "min_apy_pct": 5.0,
+    "max_age_s": 172800
+  },
+  "decision": {
+    "fire": true,
+    "reason": "threshold-met",
+    "top": {
+      "pool": "fix-1",
+      "chain": "Base",
+      "project": "aave-v3",
+      "symbol": "USDC",
+      "tvlUsd": 1000000,
+      "apy": 6.2,
+      "apyBase": 5.2,
+      "apyReward": 1.0
+    },
+    "threshold": 5.0,
+    "age_s": 60688
+  },
+  "execution_plan": {
+    "steps": [
+      {
+        "seq": 1,
+        "action": "keeperhub.web3/check-balance",
+        "params": {
+          "network": "8453"
+        }
+      },
+      {
+        "seq": 2,
+        "action": "keeperhub.condition.apy-gate",
+        "params": {
+          "symbol": "USDC",
+          "apy_pct": 6.2,
+          "threshold": 5.0,
+          "operator": ">="
+        }
+      },
+      {
+        "seq": 3,
+        "action": "keeperhub.notify.route",
+        "params": {
+          "channel": "audit",
+          "message": "route $100 -> aave-v3 USDC on Base @ 6.2%"
+        }
+      }
+    ],
+    "plan_hash": "e49e478b3ce4df4d"
+  },
+  "keeperhub_binding": "keeperhub_workflow.json (import or MCP create_workflow)"
+}
+wrote /home/brahim/code/money-goal/keeper/demo_output.json and appended /home/brahim/code/money-goal/keeper/audit_trail.jsonl
+{
+  "run_at": "2026-09-08T14:51:27Z",
+  "mode": "live",
+  "api_base": "https://devbox.tail08c9f0.ts.net",
+  "snapshot_source": "live-cache-mirror",
+  "snapshot_fetched_at": "2026-09-08T03:31:59Z",
+  "pool_count": 20,
+  "paywall_live": true,
+  "paywall_detail": "402 quote ok: $0.01 USDC on Base",
+  "policy": {
+    "min_apy_pct": 5.0,
+    "max_age_s": 172800
+  },
+  "decision": {
+    "fire": true,
+    "reason": "threshold-met",
+    "top": {
+      "pool": "712ce948-bd9e-4f4a-8916-b72c447f7578",
+      "chain": "Arbitrum",
+      "project": "usd-ai",
+      "symbol": "SUSDAI",
+      "tvlUsd": 460132855,
+      "apy": 7.03,
+      "apyBase": 7.03,
+      "apyReward": null
+    },
+    "threshold": 5.0,
+    "age_s": 47969
+  },
+  "execution_plan": {
+    "steps": [
+      {
+        "seq": 1,
+        "action": "keeperhub.web3/check-balance",
+        "params": {
+          "network": "8453"
+        }
+      },
+      {
+        "seq": 2,
+        "action": "keeperhub.condition.apy-gate",
+        "params": {
+          "symbol": "SUSDAI",
+          "apy_pct": 7.03,
+          "threshold": 5.0,
+          "operator": ">="
+        }
+      },
+      {
+        "seq": 3,
+        "action": "keeperhub.notify.route",
+        "params": {
+          "channel": "audit",
+          "message": "route $100 -> usd-ai SUSDAI on Arbitrum @ 7.03%"
+        }
+      }
+    ],
+    "plan_hash": "b9414a5358dafcd5"
+  },
+  "keeperhub_binding": "keeperhub_workflow.json (import or MCP create_workflow)"
+}
+wrote /home/brahim/code/money-goal/keeper/demo_output.json and appended /home/brahim/code/money-goal/keeper/audit_trail.jsonl
