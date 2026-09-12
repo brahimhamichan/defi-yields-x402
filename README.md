@@ -2,7 +2,7 @@
 
 Live pay-per-call DeFi data. $0.01 USDC per call on Base via [x402](https://x402.org). No signup, no API keys.
 
-**Live:** `https://devbox.tail08c9f0.ts.net`
+> **Demo:** a live instance runs 24/7 — ask for the current endpoint URL in an order thread, or self-host below in 30 seconds.
 
 ## Endpoints (all paywalled except /health)
 
